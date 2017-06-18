@@ -17,7 +17,7 @@ namespace Carpark.Engine.RateRepository.Calculators
 
             if (timespan.Days > 1)
             {
-                return (timespan.Days * CalendarDayRate); 
+                return ((int)Math.Ceiling(timespan.TotalDays) * CalendarDayRate); 
             }
 
             return (timespan.Hours * HourRate); 

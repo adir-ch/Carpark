@@ -16,7 +16,7 @@ namespace Carpark.Engine.RateRepository.Rates
 
         public override string RateDescription()
         {
-            return "Hourly Rate"; 
+            return "Standard Rate"; 
         }
     }
 }
