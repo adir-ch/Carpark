@@ -10,5 +10,10 @@ namespace Carpark.Engine
     {
         public DateTime EnterTime { get; set; }
         public DateTime ExitTime { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("Enter: {0}, Exit: {1}", EnterTime, ExitTime); 
+        }
     }
 }
