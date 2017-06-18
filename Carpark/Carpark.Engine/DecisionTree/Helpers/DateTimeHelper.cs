@@ -11,18 +11,18 @@ namespace Carpark.Engine.DecisionTree.Helpers
         public static bool IsNight(DateTime enter, DateTime exit)
         {
             var span = (exit - enter);
-            Console.WriteLine("start: {0}, end: {1} => Days={2}, TotalDays={3}, hours: {4}", enter, exit, span.Days, span.TotalDays, span.Hours);
+            //Console.WriteLine("start: {0}, end: {1} => Days={2}, TotalDays={3}, hours: {4}", enter, exit, span.Days, span.TotalDays, span.Hours);
 
             if (span.Days == 0 && span.Hours < 12)
             {
                 if (enter.Hour >= 18 && exit.Hour < 6)
                 {
-                    Console.WriteLine("Found night rate");
+                    //Console.WriteLine("Found night rate");
                     return true;
                 }
             }
 
-            Console.WriteLine("Not a night rate");
+            //Console.WriteLine("Not a night rate");
             return false; 
         }
 
@@ -31,7 +31,7 @@ namespace Carpark.Engine.DecisionTree.Helpers
             var sameDay = (exit.Date == enter.Date);
             DateTime startExit = new DateTime(exit.Year, exit.Month, exit.Day, 15, 30, 00);
             DateTime endExit = new DateTime(exit.Year, exit.Month, exit.Day, 23, 30, 00);
-            Console.WriteLine("start: {0}, end: {1} => same day: {2}", enter, exit, sameDay ? "Yes" : "No");
+            //Console.WriteLine("start: {0}, end: {1} => same day: {2}", enter, exit, sameDay ? "Yes" : "No");
 
             if (sameDay == true)
             {
@@ -39,21 +39,21 @@ namespace Carpark.Engine.DecisionTree.Helpers
                 {
                     if (exit >= startExit && exit < endExit)
                     {
-                        Console.WriteLine("Found Early bird rate");
+                        //Console.WriteLine("Found Early bird rate");
                         return true;
                     }
 
                 }
             }
 
-            Console.WriteLine("Not an early bird rate");
+            //Console.WriteLine("Not an early bird rate");
             return false; 
         }
 
         public static bool IsWeekend(DateTime enter, DateTime exit)
         {
             var span = (exit - enter);
-            Console.WriteLine("start: {0}, end: {1} => Days={2}, TotalDays={3}, hours: {4}", enter, exit, span.Days, span.TotalDays, span.Hours);
+            //Console.WriteLine("start: {0}, end: {1} => Days={2}, TotalDays={3}, hours: {4}", enter, exit, span.Days, span.TotalDays, span.Hours);
 
 
             if (span.Days < 2)
@@ -62,13 +62,13 @@ namespace Carpark.Engine.DecisionTree.Helpers
                 {
                     if (exit.DayOfWeek == DayOfWeek.Saturday || exit.DayOfWeek == DayOfWeek.Sunday)
                     {
-                        Console.WriteLine("Found weekend rate");
+                        //Console.WriteLine("Found weekend rate");
                         return true;
                     }
                 }
             }
 
-            Console.WriteLine("Not a weekend rate");
+            //Console.WriteLine("Not a weekend rate");
             return false; 
         }
     }
