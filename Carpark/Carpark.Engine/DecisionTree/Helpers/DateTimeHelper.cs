@@ -10,7 +10,7 @@ namespace Carpark.Engine.DecisionTree.Helpers
     {
         public static bool IsNight(DateTime enter, DateTime exit)
         {
-            var span = (enter - exit);
+            var span = (exit - enter);
             Console.WriteLine("start: {0}, end: {1} => Days={2}, TotalDays={3}, hours: {4}", enter, exit, span.Days, span.TotalDays, span.Hours);
 
             if (span.Days == 0 && span.Hours < 12)

@@ -20,7 +20,13 @@ namespace Carpark.Engine.RateRepository.Calculators
                 return ((int)Math.Ceiling(timespan.TotalDays) * CalendarDayRate); 
             }
 
-            return (timespan.Hours * HourRate); 
+            var totalHours = (int)Math.Ceiling(timespan.TotalHours); 
+            if(totalHours <= 3)
+            {
+                return (totalHours * HourRate); 
+            }
+
+            return (decimal)20.00;
         }
     }
 }
