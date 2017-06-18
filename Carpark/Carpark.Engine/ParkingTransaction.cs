@@ -23,5 +23,15 @@ namespace Carpark.Engine
         {
             return _parkingRate.CalculateRate(_patron.EnterTime, _patron.ExitTime); 
         }
+
+        public string Summary()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Parking transaction: ");
+            builder.AppendFormat("{0}, ", _patron);
+            builder.AppendFormat("Qulify for: {0}, ", _parkingRate.RateDescription());
+            builder.AppendFormat("Total = ${0} AU", TransactionTotal());
+            return builder.ToString(); 
+        }
     }
 }
