@@ -35,9 +35,11 @@ This document will be updated during my work.
 
 ### Testing ###
 
-- The testing framework I've used is NUnit.
+- The testing framework I've used is NUnit + Moq.
 - I've tested the car park engine components only (not the clients).
 - Although testing the DecisionResultNode looks trivial (since it returns only a property), it is important, since in the future someone might change the behavior, and not return the initial DecisionResult, which will result in the test failing and code refactoring (as it should).
+- Only the ParkingRateBase class was tested, since it does most of the work, but since it's an abstract class, I used the NightRate class in the test (instead of mocking a derived class).
+- I didn't test the fake DB, since it is just there for holding data.
 
 ### Some improvements for the future ###
 
