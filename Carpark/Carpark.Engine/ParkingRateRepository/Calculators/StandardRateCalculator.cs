@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carpark.Engine.RateRepository.Calculators
 {
-    public class HourlyRateCalculator : IParkingRateCalaulator
+    public class StandardRateCalculator : IParkingRateCalaulator
     {
         public decimal HourRate { get; set; }
         public decimal CalendarDayRate { get; set; }

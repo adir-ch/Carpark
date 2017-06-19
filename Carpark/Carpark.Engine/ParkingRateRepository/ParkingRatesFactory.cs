@@ -112,7 +112,7 @@ namespace Carpark.Engine.ParkingRateRepository
 
         private IParkingRate CreateStandardRateObject()
         {
-            return new StandardRate(new HourlyRateCalculator()
+            return new StandardRate(new StandardRateCalculator()
             {
                 HourRate = _db.Read((int)ParkingRateCode.StandardHourRate),
                 CalendarDayRate = _db.Read((int)ParkingRateCode.StandardCalendarDayRate)

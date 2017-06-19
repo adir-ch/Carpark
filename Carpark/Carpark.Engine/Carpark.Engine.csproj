@@ -56,7 +56,7 @@
     <Compile Include="Patron.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ParkingRateRepository\Calculators\FlatRateCalculator.cs" />
-    <Compile Include="ParkingRateRepository\Calculators\HourlyRateCalculator.cs" />
+    <Compile Include="ParkingRateRepository\Calculators\StandardRateCalculator.cs" />
     <Compile Include="ParkingRateRepository\Rates\IParkingRate.cs" />
     <Compile Include="ParkingRateRepository\Calculators\IParkingRateCalaulator.cs" />
     <Compile Include="ParkingRateRepository\Rates\EarlyBirdRate.cs" />
