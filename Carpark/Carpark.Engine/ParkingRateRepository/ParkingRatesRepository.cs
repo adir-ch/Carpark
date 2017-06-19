@@ -18,14 +18,12 @@ namespace Carpark.Engine.ParkingRateRepository
 
         public IParkingRate GetParkingRate(ParkingRateCode parkingRateCode)
         {
-            var parkingRate = _parkingRatesFactory.CreateParkingRate(parkingRateCode); 
-
-            if(parkingRate == null)
+            if (Enum.IsDefined(typeof(ParkingRateCode), parkingRateCode) == false)
             {
                 throw new Exception(String.Format("Unable to create a new parking rate with code: {0}", parkingRateCode)); 
             }
 
-            return parkingRate; 
+            return _parkingRatesFactory.CreateParkingRate(parkingRateCode); 
         }
 
     }

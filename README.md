@@ -40,9 +40,11 @@ This document will be updated during my work.
 - Although testing the DecisionResultNode looks trivial (since it returns only a property), it is important, since in the future someone might change the behavior, and not return the initial DecisionResult, which will result in the test failing and code refactoring (as it should).
 - Only the ParkingRateBase class was tested, since it does most of the work, but since it's an abstract class, I used the NightRate class in the test (instead of mocking a derived class).
 - I didn't test the fake DB, since it is just there for holding data.
+- CarPark Engine tests are actually also integration tests (or end to end tests).
 
 ### Some improvements for the future ###
 
 - Take the tree definition from the DB.
 - Inject the proper rate instead of using rate factory (or use factory with injector).
 - Carpark engine should be on a separate Microservice (if the load is high).
+- Given the time, I would replace all objects init with DI, and inject when needed, thus creating a more extension-able code.
