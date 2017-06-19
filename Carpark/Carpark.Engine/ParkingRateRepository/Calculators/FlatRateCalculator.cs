@@ -12,6 +12,11 @@ namespace Carpark.Engine.RateRepository.Calculators
 
         public decimal CalculateRate(DateTime entryTime, DateTime exitTime)
         {
+            if (Rate <= 0)
+            {
+                throw new Exception(String.Format("Illegal parking rate found: {0}", Rate)); 
+            }
+
             return Rate; 
         }
     }

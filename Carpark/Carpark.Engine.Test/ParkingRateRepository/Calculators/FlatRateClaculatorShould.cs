@@ -25,7 +25,7 @@ namespace Carpark.Engine.Test.ParkingRateRepository.Calculators
 
         [Test]
         [TestCase(200000, ExpectedResult = 200000)]
-        [TestCase(0, ExpectedResult = 0)]
+        [TestCase(1, ExpectedResult = 1)]
         [TestCase(18201, ExpectedResult = 18201)]
         public decimal CalculateFlatRateAccordingToInitializedRate(decimal rate)
         {
