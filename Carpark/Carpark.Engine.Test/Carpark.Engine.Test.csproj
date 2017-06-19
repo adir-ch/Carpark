@@ -38,6 +38,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecisionTree\DecisionQueryNodeShould.cs" />
+    <Compile Include="DecisionTree\DecisionResultNodeShould.cs" />
     <Compile Include="DecisionTree\Helpers\DateTimeHelperShould.cs" />
     <Compile Include="Engine\ParkingEngineShould.cs" />
     <Compile Include="EnumHelpers\EnumHelperShould.cs" />

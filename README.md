@@ -6,6 +6,7 @@ This document will be updated during my work.
 
 ### General Assumptions ###
 
+- Patron will be charged according to a single rate (no multiple rates if parked during night and weekend for example).
 - If enters before midnight Friday and exit during the weekend or after the weekend, but not qualified to a night rate during weekend promotion, the charge will be according to the Hourly rate.
 
 - Car that enters in Sunday after 6PM, and exit on Monday at 3AM (for example) should be charged by the standard rate, since it does not qualify for weekend rate (exit before Sunday Midnight), and does not qualify for night rate (since night rate defined only for weekdays).
@@ -24,6 +25,7 @@ This document will be updated during my work.
 
 ### General Coding notes ###
 
+- Input data validation is / should-be done before calling to the carpark engine, hence the engine does not check if the enter / exit dates are valid, it assumes they are.
 - In real life, the rates should come from a DB, here I have used a Memory DB (implemented with a dictionary: Dictionary<string, ParkingRateCode>
 - The data folder inside the ParkingRateRepository is actually a fake DB.
 - It would be nice to have an IDBEntity as a data in the DB (Dictionary<string, IDBEntity>).
@@ -35,6 +37,7 @@ This document will be updated during my work.
 
 - The testing framework I've used is NUnit.
 - I've tested the car park engine components only (not the clients).
+- Although testing the DecisionResultNode looks trivial (since it returns only a property), it is important, since in the future someone might change the behavior, and not return the initial DecisionResult, which will result in the test failing and code refactoring (as it should).
 
 ### Some improvements for the future ###
 
