@@ -46,14 +46,20 @@ namespace Carpark.Engine.Test.ParkingRateRepository.Calculators
         {
             get
             {
-                yield return new TestCaseData(new DateTime(2017, 01, 01, 18, 0, 0), 
-                                              new DateTime(2017, 01, 02, 6, 00, 00)).Returns(0);
+                yield return new TestCaseData(new DateTime(2017, 06, 06, 1, 0, 0), 
+                                              new DateTime(2017, 06, 06, 1, 30, 00)).Returns(5);
 
-                yield return new TestCaseData(new DateTime(2017, 01, 01, 18, 0, 0), 
-                                              new DateTime(2017, 01, 02, 5, 59, 59)).Returns(0);
+                yield return new TestCaseData(new DateTime(2017, 06, 06, 1, 0, 0), 
+                                              new DateTime(2017, 06, 06, 2, 10, 00)).Returns(10);
+
+                yield return new TestCaseData(new DateTime(2017, 06, 06, 1, 0, 0), 
+                                              new DateTime(2017, 06, 06, 3, 10, 00)).Returns(15);
                 
-                yield return new TestCaseData(new DateTime(2017, 01, 01, 17, 59, 59), 
-                                              new DateTime(2017, 01, 02, 5, 00, 00)).Returns(0);
+                yield return new TestCaseData(new DateTime(2017, 06, 06, 1, 0, 0), 
+                                              new DateTime(2017, 06, 06, 4, 00, 01)).Returns(20);
+
+                yield return new TestCaseData(new DateTime(2017, 06, 06, 1, 0, 0), 
+                                              new DateTime(2017, 06, 06, 6, 00, 01)).Returns(20);
             }
         }
     }
