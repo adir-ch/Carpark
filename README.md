@@ -24,7 +24,7 @@ This document will be updated during my work.
 
 ### General Coding notes ###
 
-- In real life, the rates should come from a DB, here I have used a Memory DB (implemented with a dictionary: Dictionary<string, IParkingRate>
+- In real life, the rates should come from a DB, here I have used a Memory DB (implemented with a dictionary: Dictionary<string, ParkingRateCode>
 - The data folder inside the ParkingRateRepository is actually a fake DB.
 - It would be nice to have an IDBEntity as a data in the DB (Dictionary<string, IDBEntity>).
 - I deliberately cast the rates enum to int when updating DB, to keep the DB neutral.
