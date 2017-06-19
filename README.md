@@ -34,7 +34,7 @@ This document will be updated during my work.
 ### Testing ###
 
 - The testing framework I've used is NUnit.
-- I've tested
+- I've tested the car park engine components only (not the clients).
 
 ### Some improvements for the future ###
 
