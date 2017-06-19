@@ -19,6 +19,7 @@ namespace CarPark.Client
             client.CalculateParkingRate(new DateTime(2017, 01, 01, 18, 0, 0), new DateTime(2017, 01, 04, 5, 59, 59)); // Weekend rate 
             client.CalculateParkingRate(new DateTime(2017, 06, 03, 1, 0, 0), new DateTime(2017, 06, 04, 5, 59, 59)); // Standard few days rate 
             client.CalculateParkingRate(new DateTime(2017, 01, 03, 06, 01, 00), new DateTime(2017, 01, 03, 16, 00, 00)); // Early bird
+            client.CalculateParkingRate(new DateTime(2017, 06, 06, 1, 0, 0), new DateTime(2017, 06, 06, 1, 00, 01)); // Standard less than one hour
             client.CalculateParkingRate(new DateTime(2017, 06, 06, 1, 0, 0), new DateTime(2017, 06, 06, 1, 30, 00)); // Standard less than one hour
             client.CalculateParkingRate(new DateTime(2017, 06, 06, 1, 0, 0), new DateTime(2017, 06, 06, 2, 10, 00)); // Standard between one to two hours
             client.CalculateParkingRate(new DateTime(2017, 06, 06, 1, 0, 0), new DateTime(2017, 06, 06, 3, 10, 00)); // Standard between two to three hours
