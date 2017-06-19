@@ -30,8 +30,8 @@ namespace Carpark.Engine.Test.ParkingRateRepository.Calculators
         }
 
         [Test]
-        public void ThrowExceptionOnIllegalRateSettings([Values(0, 100, -100)] decimal hourRate,
-                                                        [Values(100, -1, -100)] decimal dayRate)
+        public void ThrowExceptionOnIllegalRateSettings([Values(0, -100)] decimal hourRate,
+                                                        [Values(-1, -100)] decimal dayRate)
             
         {
             _calculator.HourRate = hourRate; 

@@ -13,6 +13,11 @@ namespace Carpark.Engine.RateRepository.Calculators
 
         public decimal CalculateRate(DateTime entryTime, DateTime exitTime)
         {
+            if (HourRate <= 0 || CalendarDayRate <= 0)
+            {
+                throw new Exception(String.Format("Illegal parking rate found: hour={0}, day={1}", HourRate, CalendarDayRate));
+            }
+
             var timespan = (exitTime - entryTime); 
 
             if (timespan.Days > 1)
